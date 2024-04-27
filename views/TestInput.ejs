@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,65 +8,217 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+
 <body>
-    <div class="w-full h-full bg-blue-200">
+    <div class="w-full h-full  ">
         <div class="navbar h-[10%] w-full bg-zinc-700 text-white flex justify-evenly items-center mx-auto ">
             <h4 class="font-bold text-xl w-[65%] flex justify-start align-center ml-5">Company</h4>
             <div class="flex justify-between items-center font-semibold text-sm w-[35%]  mr-5">
-                <a href="/BookSession"><h5><span class="text-yellow-600">Book your session</span></h5></a>
-                <a href="/about"><h5>About</h5></a>
-                <a href="/contact"><h5>Contact us</h5></a>
-                <a href="/profile"><h5 class="px-3 py-1 border-zinc-100 border-[2px] rounded-full">Profile</h5></a>
+                <a href="/BookSession">
+                    <h5><span class="text-yellow-600">Book your session</span></h5>
+                </a>
+                <a href="/about">
+                    <h5>About</h5>
+                </a>
+                <a href="/contact">
+                    <h5>Contact us</h5>
+                </a>
+                <a href="/profile">
+                    <h5 class="px-3 py-1 border-zinc-100 border-[2px] rounded-full">Profile</h5>
+                </a>
             </div>
         </div>
 
-        <div>
-            <h1>Please interact with the process to know your <span>Mental Health</span></h1>
+        <div class="px-8 py-4 my-4">
+            <h1 class="text-3xl font-semibold text-zinc-400">Please interact with the process to know your <span>Mental Health</span></h1>
         </div>
-        <!-- <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-96">
-            <h2 class="text-xl font-semibold mb-4">Single Select Question</h2>
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="question">Question:</label>
-                <p class="text-gray-700">What is your favorite color?</p>
-            </div>
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="options">Options:</label>
-                <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                    <option value="1">Red</option>
-                    <option value="2">Blue</option>
-                    <option value="3">Green</option>
-                    <option value="4">Yellow</option>
-                </select>
-            </div>
+        <!-- <div class="w-[80%] mx-auto px-8 py-4  flex justify-center items-center gap-20">
+            <h1>1</h1>
+            <h1>2</h1>
+            <h1>3</h1>
+            <h1>4</h1>
+            <h1>5</h1>
+
         </div> -->
-        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-96">
-            <h2 class="text-xl font-semibold mb-4">Single Select Question</h2>
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="question">Question:</label>
-                <p class="text-gray-700">What is your favorite color?</p>
-            </div>
-            <div class="flex justify-between">
-                <div class="flex justify-between mb-4">
-                    <label class="block text-gray-700 text-sm font-bold" for="option1">Red</label>
-                    <input type="radio" id="option1" name="color" class="form-radio h-5 w-5 text-gray-600" value="red">
-                </div>
-                <div class="flex justify-between mb-4">
-                    <label class="block text-gray-700 text-sm font-bold" for="option2">Blue</label>
-                    <input type="radio" id="option2" name="color" class="form-radio h-5 w-5 text-gray-600" value="blue">
-                </div>
-                <div class="flex justify-between mb-4">
-                    <label class="block text-gray-700 text-sm font-bold" for="option3">Green</label>
-                    <input type="radio" id="option3" name="color" class="form-radio h-5 w-5 text-gray-600" value="green">
-                </div>
-                <div class="flex justify-between mb-4">
-                    <label class="block text-gray-700 text-sm font-bold" for="option4">Yellow</label>
-                    <input type="radio" id="option4" name="color" class="form-radio h-5 w-5 text-gray-600" value="yellow">
-                </div>
-            </div>
+       
+      <form action="/test" method="post">
+        <div class="formsdata w-[80%] mx-auto px-8 py-4 ">
             
-        </div>
+            <div class=" flex justify-between items-center  ">
+                <h1>1</h1>
+                <h1>2</h1>
+                <h1>3</h1>
+                <h1>4</h1>
+                <h1>5</h1>
+    
+            </div>
+            <div class="bg-white shadow-md rounded-xl shadow-2xl shadow-zinc-400 px-8 pt-6 pb-8 mb-4 w-full flex justify-between items-center">
+                
+            
+
+                <div class="mb-4 w-2/6">
+                    <label class="block text-gray-700 text-2xl font-bold mb-2" for="question">ANGER</label>
+                </div>
+    
+                <div class="w-4/6 flex justify-between items-center gap-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <input type="radio" id="rating1" name="anger" class="form-radio h-5 w-5 text-gray-600" value="1">
+                    </div>
+    
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating2" name="anger" class="form-radio h-5 w-5 text-gray-600" value="2">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating3" name="anger" class="form-radio h-5 w-5 text-gray-600" value="3">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating4" name="anger" class="form-radio h-5 w-5 text-gray-600" value="4">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating5" name="anger" class="form-radio h-5 w-5 text-gray-600" value="5">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="bg-white shadow-md rounded-xl shadow-2xl shadow-zinc-400 px-8 pt-6 pb-8 mb-4 w-full flex justify-between items-center">
+    
+                <div class="mb-4 w-2/6">
+                    <label class="block text-gray-700 text-2xl font-bold mb-2" for="question">ANXIETY</label>
+                </div>
+    
+                <div class="w-4/6 flex justify-between items-center gap-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <input type="radio" id="rating11" name="anxiety" class="form-radio h-5 w-5 text-gray-600" value="1">
+                    </div>
+    
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating22" name="anxiety" class="form-radio h-5 w-5 text-gray-600" value="2">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating33" name="anxiety" class="form-radio h-5 w-5 text-gray-600" value="3">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating44" name="anxiety" class="form-radio h-5 w-5 text-gray-600" value="4">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating55" name="anxiety" class="form-radio h-5 w-5 text-gray-600" value="5">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="bg-white shadow-md rounded-xl shadow-2xl shadow-zinc-400 px-8 pt-6 pb-8 mb-4 w-full flex justify-between items-center">
+    
+                <div class="mb-4 w-2/6">
+                    <label class="block text-gray-700 text-2xl font-bold mb-2" for="question">STRESS</label>
+                </div>
+    
+                <div class="w-4/6 flex justify-between items-center gap-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <input type="radio" id="rating111" name="stress" class="form-radio h-5 w-5 text-gray-600" value="1">
+                    </div>
+    
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating222" name="stress" class="form-radio h-5 w-5 text-gray-600" value="2">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating333" name="stress" class="form-radio h-5 w-5 text-gray-600" value="3">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating444" name="stress" class="form-radio h-5 w-5 text-gray-600" value="4">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating555" name="stress" class="form-radio h-5 w-5 text-gray-600" value="5">
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="bg-white shadow-md rounded-xl shadow-2xl shadow-zinc-400 px-8 pt-6 pb-8 mb-4 w-full flex justify-between items-center">
+    
+                <div class="mb-4 w-2/6">
+                    <label class="block text-gray-700 text-2xl font-bold mb-2" for="question">HAPPY</label>
+                </div>
+    
+                <div class="w-4/6 flex justify-between items-center gap-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <input type="radio" id="rating1111" name="happy" class="form-radio h-5 w-5 text-gray-600" value="1">
+                    </div>
+    
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating2222" name="happy" class="form-radio h-5 w-5 text-gray-600" value="2">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating3333" name="happy" class="form-radio h-5 w-5 text-gray-600" value="3">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating4444" name="happy" class="form-radio h-5 w-5 text-gray-600" value="4">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating5555" name="happy" class="form-radio h-5 w-5 text-gray-600" value="5">
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="bg-white shadow-md rounded-xl shadow-2xl shadow-zinc-400 px-8 pt-6 pb-8 mb-4 w-full flex justify-between items-center">
+    
+                <div class="mb-4 w-2/6">
+                    <label class="block text-gray-700 text-2xl font-bold mb-2" for="question">LONELINESS</label>
+                </div>
+    
+                <div class="w-4/6 flex justify-between items-center gap-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <input type="radio" id="rating1111" name="loneliness" class="form-radio h-5 w-5 text-gray-600" value="1">
+                    </div>
+    
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating2222" name="loneliness" class="form-radio h-5 w-5 text-gray-600" value="2">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating3333" name="loneliness" class="form-radio h-5 w-5 text-gray-600" value="3">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating4444" name="loneliness" class="form-radio h-5 w-5 text-gray-600" value="4">
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+    
+                        <input type="radio" id="rating5555" name="loneliness" class="form-radio h-5 w-5 text-gray-600" value="5">
+                    </div>
+                </div>
+            </div>
+          
+
+           </div>
+          <div class="flex justify-center items-center">
+            <input 
+            class="px-8 py-4 bg-green-400 rounded-xl  "
+            type="submit">
+          </div>
+      </form>
+
+
     </div>
-   
-<script src="/javascript/script.js"></script>
+
+    <script src="/javascript/script.js"></script>
 </body>
+
 </html>
