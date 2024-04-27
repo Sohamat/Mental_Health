@@ -73,6 +73,8 @@ app.get('/testinput',function(req,res){
     res.render("TestInput")
 })
 
+
+
 app.post('/testinput',function(req,res){
     if(req.body!=null){
         res.redirect("/detailpage");
