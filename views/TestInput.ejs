@@ -38,25 +38,18 @@
         </div>
       </div>
 
-      <div class="px-8 py-4 my-4">
-        <h1 class="text-3xl font-semibold text-zinc-400">
+      <div class="w-[80%] px-8 py-4 my-4 mx-auto ">
+        <h1 class="text-3xl font-semibold text-green-500">
           Please interact with the process to know your
-          <span>Mental Health</span>
+          <span class="text-blue-500 font-bold">Mental Health </span>
         </h1>
       </div>
-      <!-- <div class="w-[80%] mx-auto px-8 py-4  flex justify-center items-center gap-20">
-            <h1>1</h1>
-            <h1>2</h1>
-            <h1>3</h1>
-            <h1>4</h1>
-            <h1>5</h1>
-
-        </div> -->
+ 
 
       <form action="/test" method="post">
         <div class="formsdata w-[80%] mx-auto px-8 py-4">
           <div
-            class="bg-white shadow-md rounded-xl shadow-2xl shadow-zinc-400 px-8 pt-6 pb-8 mb-4 w-full flex justify-between items-center"
+            class=" shadow-md rounded-xl shadow-2xl shadow-zinc-400 px-8 pt-6 pb-8 mb-4 w-full flex justify-between items-center"
           > 
 
           <div class="mb-4 w-2/6">
@@ -360,16 +353,22 @@
             </div>
           </div>
         </div>
-        <div class="flex justify-center items-center">
+        <div class="w-[80%] mx-auto flex justify-center items-center px-8 gap-4">
+
+          <button 
+          onclick="refreshPage()"          
+          class="w-1/2 bg-blue-500 mx-auto px-8 py-4 text-2xl font-semibold text-white rounded-xl ">Reset</button>
+
           <input
-            class="px-8 py-4 bg-green-400 rounded-xl"
+            class="w-1/2 mx-auto px-8 py-4 text-2xl font-semibold text-zinc-800 bg-green-400 rounded-xl"
             type="submit"
             value="Submit"
           />
+
         </div>
       </form>
     </div>
 
-    <script src="/javascript/script.js"></script>
+    <script src="/javascript/refreshbtn.js"></script>
   </body>
 </html>

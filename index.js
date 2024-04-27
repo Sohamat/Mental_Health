@@ -24,6 +24,9 @@ app.get('/BookSession',function(req,res){
 app.get('/profile',function(req,res){
     res.render("Profile")
 })
+app.get('/community',function(req,res){
+    res.render("Community")
+})
 app.post('/register',function(req,res){
     const userdata={
         name: req.body.name,
@@ -69,6 +72,9 @@ app.get('/doctor',function(req,res){
 
 app.get('/testinput',function(req,res){
     res.render("TestInput")
+})
+app.get('/testresult',function(req,res){
+    res.render("testResult")
 })
 
 app.listen(3000,function(){
