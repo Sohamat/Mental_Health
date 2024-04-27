@@ -57,6 +57,7 @@ let sum = 0;
 
 
 console.log(req.body)
+res.redirect("/detail")
 })
 
 
@@ -74,6 +75,9 @@ app.get('/doctor',function(req,res){
 
 app.get('/testinput',function(req,res){
     res.render("TestInput")
+})
+app.get('/testresult',function(req,res){
+    res.render("testResult")
 })
 
 app.listen(3000,function(){
