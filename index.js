@@ -73,6 +73,9 @@ app.get('/doctor',function(req,res){
 app.get('/testinput',function(req,res){
     res.render("TestInput")
 })
+app.get('/testresult',function(req,res){
+    res.render("testResult")
+})
 
 app.listen(3000,function(){
     console.log('Server is running on port 3000');
