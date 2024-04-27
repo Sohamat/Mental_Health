@@ -1,7 +1,8 @@
-// Define your Mongoose model
-const mongoose = require('mongoose');
 
-// Define the schema for your model
+const mongoose = require('mongoose');
+mongoose.connect("mongodb://127.0.0.1:27017/MentalHealth")
+const passportLocalMongoose = require('passport-local-mongoose');
+
 const Schema = mongoose.Schema;
 
 const UserModelSchema = new Schema({
@@ -20,6 +21,8 @@ const UserModelSchema = new Schema({
     unique: true
   }
 });
+
+UserModelSchema.plugin(require(passportLocalMongoose));
 
 // Create and export the Mongoose model based on the schema
 const UserModel = mongoose.model('UserModel', UserModelSchema);
