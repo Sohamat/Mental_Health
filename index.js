@@ -67,7 +67,7 @@ app.get('/doctor',function(req,res){
 
 app.get('/testinput',function(req,res){
     res.render("TestInput")
-})
+}) 
 app.get('/detailpage',function(req,res){
     res.render("Details")
 })
