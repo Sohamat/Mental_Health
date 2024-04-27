@@ -1,9 +1,8 @@
 const express= require('express');
 const app= express();
 const path= require('path');
-app.use(express.json());
-app.use(express.urlencoded({ extended:true}));
-app.use(express.static(path.join(__dirname,'public')));
+ 
+
 const fs= require('fs');
 app.set('view engine','ejs');
 
@@ -22,6 +21,16 @@ app.get('/BookSession',function(req,res){
 app.get('/profile',function(req,res){
     res.render("Profile")
 })
+app.post('/register',function(req,res){
+    const userdata={
+        name: req.body.name,
+        age: req.body.age,
+        email: req.body.email
+    }
+})
+app.get('/register',function(req,res){
+    res.render("Register")
+});
 
 app.listen(3000,function(){
     console.log('Server is running on port 3000');
