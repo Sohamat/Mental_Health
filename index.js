@@ -23,6 +23,18 @@ app.get('/profile',function(req,res){
     res.render("Profile")
 })
 
+app.get('/stressmanager',function(req,res){
+    res.render("stressManagement")
+})
+
+app.get('/doctor',function(req,res){
+    res.render("doctorCard")
+})
+
+app.get('/testinput',function(req,res){
+    res.render("TestInput")
+})
+
 app.listen(3000,function(){
     console.log('Server is running on port 3000');
 });
