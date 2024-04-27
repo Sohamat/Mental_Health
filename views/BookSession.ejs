@@ -8,6 +8,49 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
+  <div class="h-screen w-screen bg-zinc-200 flex justify-evenly items-center">
+    <div class="left w-[55%] h-full flex flex-col justify-evenly items-center">
+    <h1 class="text-3xl font-semibold mt-[20px] ">Book your <span class="text-orange-400">free counselling</span> session. Now !</h1>
+    <form class="mt-[50px]" action="/submit-session font-semibold" method="post">
+        <label for="name">Name:</label>
+        <input class="w-3/4" type="text" id="name" name="name" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br><br>
+
+        <label for="dateTime">Date and Time:</label>
+        <input type="datetime-local" id="dateTime" name="dateTime" required><br><br>
+
+        <label for="duration">Duration (minutes):</label>
+        <input type="number" id="duration" name="duration" required><br><br>
+
+        <label for="sessionStatus">Session Status:</label>
+        <select id="sessionStatus" name="sessionStatus" required>
+            <option value="scheduled">Scheduled</option>
+            <option value="completed">Completed</option>
+            <option value="canceled">Canceled</option>
+        </select><br><br>
+
+        <label for="patientFeedback">Patient Feedback:</label><br>
+        <textarea id="patientFeedback" name="patientFeedback" rows="4" cols="50"></textarea><br><br>
+
+        <input class="px-4 py-2 text-white bg-yellow-600 rounded-lg font-semibold " type="submit" value="Submit">
+    </form>
+
+    </div>
+    <div class="right w-[45%] h-full">
+     <img src="https://images.unsplash.com/photo-1495745966610-2a67f2297e5e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGhvdG9ncmFwaGVyfGVufDB8fDB8fHww" class="h-full w-full object-cover"  />
+    </div>
+  </div>
    
 <script src="/javascript/script.js"></script>
 </body>

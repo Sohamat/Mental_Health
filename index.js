@@ -1,7 +1,7 @@
 const express= require('express');
 const app= express();
 const path= require('path');
- 
+const patientModel=require('./models/Patient_Schema.module.js')
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, 'public')))
@@ -24,6 +24,9 @@ app.get('/BookSession',function(req,res){
 app.get('/profile',function(req,res){
     res.render("Profile")
 })
+app.get('/community',function(req,res){
+    res.render("Community")
+})
 app.post('/register',function(req,res){
     const userdata={
         name: req.body.name,
@@ -39,22 +42,19 @@ const qno_arr = [2, 3, 5, 7, 9];
 const checkboxwt = [10, 8, 5, 3];
 let sum = 0;
 
-// for (let i = 0; i < 5; i++) {
-//     for (let j = 1; j < 5; j++) {
-//         if (req.body[`input${i + 1}_${j}`] ) {
-//             sum += checkboxwt[j - 1] * qno_arr[i];
-//             break;
-//         }
-//     }
-// }
-
-
-
-
-
-
-console.log(req.body)
+for (let i = 0; i < 5; i++) {
+    let qwt = qno_arr[i];
+    console.log('qwt = '+qwt)
+    let selectedOption = parseInt(req.body[`q${i + 1}`], 10); // Convert to number
+    console.log('so'+selectedOption)
+    sum += qwt * checkboxwt[selectedOption - 1];
+}
+res.send(sum)
 res.redirect("/detail")
+})
+
+app.get('/detail',function(req,res){
+     
 })
 
 
