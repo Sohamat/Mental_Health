@@ -39,16 +39,7 @@ const qno_arr = [2, 3, 5, 7, 9];
 const checkboxwt = [10, 8, 5, 3];
 let sum = 0;
 
-// for (let i = 0; i < 5; i++) {
-//     for (let j = 1; j < 5; j++) {
-//         if (req.body[`input${i + 1}_${j}`] ) {
-//             sum += checkboxwt[j - 1] * qno_arr[i];
-//             break;
-//         }
-//     }
-// }
-
-
+sum=req.body.q1
 
 
 
