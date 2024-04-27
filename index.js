@@ -67,7 +67,17 @@ app.get('/doctor',function(req,res){
 
 app.get('/testinput',function(req,res){
     res.render("TestInput")
-}) 
+})
+
+app.post('/testinput',function(req,res){
+    if(req.body!=null){
+        res.redirect("/detailpage");
+    }
+    else {
+        res.redirect("/testinput")
+    }
+})
+//data input 
 app.get('/detailpage',function(req,res){
     res.render("Details")
 })
