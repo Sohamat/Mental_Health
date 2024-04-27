@@ -2,9 +2,12 @@ const express= require('express');
 const app= express();
 const path= require('path');
  
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(express.static(path.join(__dirname, 'public')))
 
-const fs= require('fs');
 app.set('view engine','ejs');
+
 
 app.get('/',function(req,res){
     res.render("index")
@@ -28,6 +31,29 @@ app.post('/register',function(req,res){
         email: req.body.email
     }
 })
+
+app.post ('/test' , (req , res , next)=>{
+
+    console.log(req.body);
+const qno_arr = [2, 3, 5, 7, 9];
+const checkboxwt = [10, 8, 5, 3];
+let sum = 0;
+
+// for (let i = 0; i < 5; i++) {
+//     for (let j = 1; j < 5; j++) {
+//         if (req.body[`input${i + 1}_${j}`] ) {
+//             sum += checkboxwt[j - 1] * qno_arr[i];
+//             break;
+//         }
+//     }
+// }
+
+
+
+
+})
+
+
 app.get('/register',function(req,res){
     res.render("Register")
 });
