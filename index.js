@@ -57,6 +57,10 @@ app.get('/register',function(req,res){
     res.render("RegisterUser")
 });
 
+app.get('/login',function(req,res){
+    res.render("LoginUser")
+});
+
 app.get('/stressmanager',function(req,res){
     res.render("stressManagement")
 })
