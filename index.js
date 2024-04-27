@@ -1,7 +1,7 @@
 const express= require('express');
 const app= express();
 const path= require('path');
- 
+const patientModel=require('./models/Patient_Schema.module.js')
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, 'public')))
@@ -39,12 +39,19 @@ const qno_arr = [2, 3, 5, 7, 9];
 const checkboxwt = [10, 8, 5, 3];
 let sum = 0;
 
-sum=req.body.q1
+for (let i = 0; i < 5; i++) {
+    let qwt = qno_arr[i];
+    console.log('qwt = '+qwt)
+    let selectedOption = parseInt(req.body[`q${i + 1}`], 10); // Convert to number
+    console.log('so'+selectedOption)
+    sum += qwt * checkboxwt[selectedOption - 1];
+}
+res.send(sum)
+res.redirect("/detail")
+})
 
-
-
-
-console.log(req.body)
+app.get('/detail',function(req,res){
+     
 })
 
 
