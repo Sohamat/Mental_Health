@@ -53,11 +53,6 @@ res.send(sum)
 res.redirect("/detail")
 })
 
-app.get('/detail',function(req,res){
-     
-})
-
-
 app.get('/register',function(req,res){
     res.render("Register")
 });
@@ -73,8 +68,8 @@ app.get('/doctor',function(req,res){
 app.get('/testinput',function(req,res){
     res.render("TestInput")
 })
-app.get('/detail',function(req,res){
-    res.render("testResult")
+app.get('/detailpage',function(req,res){
+    res.render("Details")
 })
 
 app.listen(3000,function(){
