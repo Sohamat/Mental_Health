@@ -24,6 +24,9 @@ app.get('/BookSession',function(req,res){
 app.get('/profile',function(req,res){
     res.render("Profile")
 })
+app.get('/community',function(req,res){
+    res.render("Community")
+})
 app.post('/register',function(req,res){
     const userdata={
         name: req.body.name,
