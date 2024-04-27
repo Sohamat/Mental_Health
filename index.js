@@ -54,7 +54,7 @@ res.redirect("/detail")
 })
 
 app.get('/register',function(req,res){
-    res.render("Register")
+    res.render("RegisterUser")
 });
 
 app.get('/stressmanager',function(req,res){
