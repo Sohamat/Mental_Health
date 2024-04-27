@@ -81,6 +81,9 @@ app.post('/testinput',function(req,res){
 app.get('/detailpage',function(req,res){
     res.render("Details")
 })
+app.get('/community',function(req,res){
+    res.render("Community")
+})
 
 app.listen(3000,function(){
     console.log('Server is running on port 3000');
