@@ -30,47 +30,47 @@
     
         <div class="w-[90%] h-[90%] mx-auto flex justify-between items-center bg-white">
             <div class="w-full h-full p-8 flex justify-between items-center">
-                <% const data = 70  %>
+                
     
                 <div class="w-1/2 h-full flex flex-col justify-center items-center">
-                    <% if (data >= 80 && data <= 100) { %>
+                    <% if (user.risk >= 80 && user.risk <= 100) { %>
                     <div class="flex justify-center items-center ">
                         <div class="layer1 relative z-10 w-80 h-80 bg-red-600 rounded-full flex justify-center items-center">
                             <div class="layer2 absolute z-20 w-64 h-64 bg-white rounded-full flex justify-center items-center">
-                                <h1 class="text-7xl font-semibold text-red-700"><%= data %>%</h1>
+                                <h1 class="text-7xl font-semibold text-red-700"><%= user.risk %>%</h1>
                             </div>
                         </div>
                     </div>
-                    <% } else if (data < 80 && data >= 60) { %>
+                    <% } else if (user.risk < 80 && user.risk >= 60) { %>
                     <div class="flex justify-center items-center">
                         <div class="layer1 relative z-10 w-80 h-80 bg-yellow-400 rounded-full flex justify-center items-center">
                             <div class="layer2 absolute z-20 w-64 h-64 bg-white rounded-full flex justify-center items-center">
-                                <h1 class="text-7xl font-semibold text-orange-400"><%= data %>%</h1>
+                                <h1 class="text-7xl font-semibold text-orange-400"><%= user.risk %>%</h1>
                             </div>
                         </div>
                     </div>
-                    <% } else if (data < 60) { %>
+                    <% } else if (user.risk < 60) { %>
                     <div class="flex justify-center items-center">
                         <div class="layer1 relative z-10 w-80 h-80 bg-green-400 rounded-full flex justify-center items-center">
                             <div class="layer2 absolute z-20 w-64 h-64 bg-white rounded-full flex justify-center items-center">
-                                <h1 class="text-7xl font-semibold text-green-400"><%= data %>%</h1>
+                                <h1 class="text-7xl font-semibold text-green-400"><%= user.risk %>%</h1>
                             </div>
                         </div>
                     </div>
                     <% } else { %>
                     <div>
-                        <h1>Data not found</h1>
+                        <h1>user.risk not found</h1>
                     </div>
                     <% } %>
     
                     <div class="my-4 p-4">
-                        <h1 class="text-2xl font-semibold  text-blue-600/90 px-4">User Name</h1>
-                        <% if (data > 80) { %>
+                        <h1 class="text-2xl font-semibold  text-blue-600/90 px-4"> <%= user.name %></h1>
+                        <% if (user.risk > 80) { %>
                         <div>
                             <p class="text-xl font-thin tracking-tight px-4 "><span class="font-semibold text-orange-400">Seek Professional Help:</span> Start by consulting with a mental health professional such as a therapist, psychologist, or psychiatrist. They can provide personalized guidance and treatment options tailored to your specific needs.
                             </p>
                         </div>
-                        <% } else if (data <= 80 && data >= 60) { %>
+                        <% } else if (user.risk <= 80 && user.risk >= 60) { %>
                         <div>
                             <p class="text-xl font-thin tracking-tight px-4 "><span class="font-semibold text-orange-400">Therapy and Counseling:</span> Consider therapy or counseling to address underlying issues and learn coping strategies. Cognitive-behavioral therapy (CBT), dialectical behavior therapy (DBT), and other evidence-based approaches can be effective for managing medium-level mental health concerns.
                             </p>                        </div>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
     
-                <% if (data >= 80 && data <= 100) { %>
+                <% if (user.risk >= 80 && user.risk <= 100) { %>
                 <div class="w-1/2 h-full ">
                     <div class="w-full h-[20%] bg-red-600 my-8 flex justify-center items-center rounded-tr-3xl rounded-bl-3xl">
                         <h1 class="text-2xl font-bold text-center text-white">You're At Very HIGH Risk....</h1>
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                 </div>
-                <% } else if (data < 80 && data >= 60) { %>
+                <% } else if (user.risk < 80 && user.risk >= 60) { %>
                 <div class="w-1/2 h-full ">
                     <div class="w-full h-[20%] bg-yellow-500/80 my-8 flex justify-center items-center rounded-tr-3xl rounded-bl-3xl">
                         <h1 class="text-2xl font-bold text-center text-white">You're At Medium Risk</h1>
@@ -122,7 +122,7 @@
                         </div>
                     </div>
                 </div>
-                <% } else if (data < 60) { %>
+                <% } else if (user.risk < 60) { %>
                 <div class="w-1/2 h-full ">
                     <div class="w-full h-[20%] bg-green-500/80 my-8 flex justify-center items-center rounded-tr-3xl rounded-bl-3xl">
                         <h1 class="text-2xl font-bold text-center text-white">You are very healthy</h1>
@@ -141,7 +141,7 @@
                 </div>
                 <% } else { %>
                 <div>
-                    <h1>data not found</h1>
+                    <h1>user.risk not found</h1>
                 </div>
                 <% } %>
             </div>
