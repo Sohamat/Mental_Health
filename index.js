@@ -91,6 +91,10 @@ app.get('/community',function(req,res){
     res.render("Community")
 })
 
+app.get('/profileDetails',function(req,res){
+    res.render("ProfileDetails")
+})
+
 app.listen(3000,function(){
     console.log('Server is running on port 3000');
 });
