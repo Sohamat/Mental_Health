@@ -2,7 +2,7 @@ const express= require('express');
 const app= express();
 const cookieParser = require("cookie-parser")
 const path= require('path');
- 
+
 
 const fs= require('fs');
 app.set('view engine','ejs');
@@ -60,24 +60,31 @@ app.get('/login',function(req,res){
     res.render("LoginUser")
 });
 app.post ('/test' , async (req , res , next)=>{
-    const qno_arr = [2, 3, 5, 7, 9];
-const checkboxwt = [10, 8, 5, 3];
-let sum = 0;
+    const qno_arr = [8,7,9,10,9,8,7,6,10,8];
+    const checkboxwt = [15, 12, 10, 8 , 6];
+    let sum = 0;
 
+    const { token } = req.cookies;
 
-    const {token} = req.cookies
+    const decodedData = await jwt.verify(token, "wlrng;ksfb kfvj sfugbRWUOBVOSV");
 
-    const decodedData = jwt.verify(token , "wlrng;ksfb kfvj sfugbRWUOBVOSV");
+    const user = await User.findById(decodedData.id);
+    for (let i = 0; i < 5; i++) {
+        let qwt = qno_arr[i];
+        console.log('qwt = ' + qwt);
+        let selectedOption = parseInt(req.body[`q${i + 1}`], 10); // Convert to number
+        console.log('so' + selectedOption);
+        sum += qwt * checkboxwt[selectedOption - 1];
+    }
 
+    // Round off the sum to no decimal places
+    const roundedSum = Math.round(sum / 6.5);
+    if(roundedSum < 30) roundedSum = 30;
+    user.risk = roundedSum;
 
-    const user = await User.findById(decodedData.id)
-for (let i = 0; i < 5; i++) {
-    let qwt = qno_arr[i];
-    let selectedOption = parseInt(req.body[`q${i + 1}`], 10); // Convert to number
-    sum += qwt * checkboxwt[selectedOption - 1];
-}
-
-    user.risk = sum ;
+    user.save();
+    console.log(user.risk);
+    res.render("Details", { user });
 
 })
 app.get('/stressmanager',function(req,res){
