@@ -110,6 +110,14 @@ app.get('/community',function(req,res){
     res.render("Community")
 })
 
+app.get('/profileDetails',function(req,res){
+    res.render("ProfileDetails")
+})
+
+app.get('/profileDetails',function(req,res){
+    res.render("ProfileDetails")
+})
+
 app.listen(5000,function(){
     console.log('Server is running on port 5000');
 });
