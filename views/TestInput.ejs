@@ -13,11 +13,11 @@
       <div
         class="navbar h-[10%] w-full bg-zinc-700 text-white flex justify-evenly items-center mx-auto"
       >
-        <h4
-          class="font-bold text-xl w-[65%] flex justify-start align-center ml-5"
+        <a
+          href="/"
+          class="font-bold text-2xl w-[65%] flex justify-start align-center ml-5"
+          >Company</a
         >
-          Company
-        </h4>
         <div
           class="flex justify-between items-center font-semibold text-sm w-[35%] mr-5"
         >
@@ -38,27 +38,25 @@
         </div>
       </div>
 
-      <div class="w-[80%] px-8 py-4 my-4 mx-auto ">
+      <div class="w-[80%] px-8 py-4 my-4 mx-auto">
         <h1 class="text-3xl font-semibold text-green-500">
           Please interact with the process to know your
           <span class="text-blue-500 font-bold">Mental Health </span>
         </h1>
       </div>
-      
 
       <form action="/testinput" method="post">
         <div class="formsdata w-[80%] mx-auto px-8 py-4">
           <div
-            class=" shadow-md rounded-xl shadow-2xl shadow-zinc-400 px-8 pt-6 pb-8 mb-4 w-full flex justify-between items-center"
-          > 
-
-          <div class="mb-4 w-2/6">
-            <label
-              class="block text-gray-700 text-2xl font-bold mb-2"
-              for="question"
-              >ANGER</label
-            >
-          </div>
+            class="shadow-md rounded-xl shadow-2xl shadow-zinc-400 px-8 pt-6 pb-8 mb-4 w-full flex justify-between items-center"
+          >
+            <div class="mb-4 w-2/6">
+              <label
+                class="block text-gray-700 text-2xl font-bold mb-2"
+                for="question"
+                >ANGER</label
+              >
+            </div>
             <div class="w-4/6 flex justify-between items-center gap-6">
               <div class="flex justify-between items-center mb-4">
                 <input
@@ -353,18 +351,21 @@
             </div>
           </div>
         </div>
-        <div class="w-[80%] mx-auto flex justify-center items-center px-8 gap-4">
-
-          <button 
-          onclick="refreshPage()"          
-          class="w-1/2 bg-blue-500 mx-auto px-8 py-4 text-2xl font-semibold text-white rounded-xl ">Reset</button>
+        <div
+          class="w-[80%] mx-auto flex justify-center items-center px-8 gap-4"
+        >
+          <button
+            onclick="refreshPage()"
+            class="w-1/2 bg-blue-500 mx-auto px-8 py-4 text-2xl font-semibold text-white rounded-xl"
+          >
+            Reset
+          </button>
 
           <input
             class="w-1/2 mx-auto px-8 py-4 text-2xl font-semibold text-zinc-800 bg-green-400 rounded-xl"
             type="submit"
             value="Submit"
           />
-
         </div>
       </form>
     </div>
