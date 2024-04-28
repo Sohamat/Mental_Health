@@ -1,0 +1,33 @@
+.pie-chart {
+    position: relative;
+    width: 200px; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .slice {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 50%, 100% 50%, 100% 0);
+  }
+
+  .fill {
+    clip-path: polygon(50% 50%, 100% 50%, 100% 0, 50% 0);
+    background-color: green; /* Change color as needed */
+  }
+
+  .remaining {
+    background-color: lightgray; /* Change color as needed */
+  }
+
+  .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: bold;
+    color: white; /* Change color as needed */
+  }

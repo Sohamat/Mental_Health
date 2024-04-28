@@ -2,11 +2,11 @@ const express= require('express');
 const app= express();
 const cookieParser = require("cookie-parser")
 const path= require('path');
-const User = require('./models/user.module')
-app.use(cookieParser())
-const jwt = require("jsonwebtoken")
+ 
+
 const fs= require('fs');
 app.set('view engine','ejs');
+
 
 app.get('/',function(req,res){
     res.render("index")
@@ -23,58 +23,41 @@ app.get('/BookSession',function(req,res){
 app.get('/profile',function(req,res){
     res.render("Profile")
 })
-app.post('/register',async function(req,res){
-    // const userdata={
-    //     name: req.body.name,
-    //     age: req.body.age,
-    //     email: req.body.email
-    // }
-    const {name , email , password} = req.body;
-
-    const user = await User.create({
-        name , email , password
-    })
-
-    const token = user.getJWTToken();
-
-    const options = {
-        expires : new Date(
-            Date.now()+2*24*60*60*1000
-) , 
-httpOnly : true ,
-    } ;
-
-    res.status(200).cookie('token' , token , options)
-     
-
-
+app.get('/community',function(req,res){
+    res.render("Community")
+})
+app.post('/register',function(req,res){
+    const userdata={
+        name: req.body.name,
+        age: req.body.age,
+        email: req.body.email
+    }
 })
 
+app.post ('/test' , (req , res , next)=>{
 
-app.post('/login' , async (req , res , next)=>{
+    console.log(req.body);
+const qno_arr = [2, 3, 5, 7, 9];
+const checkboxwt = [10, 8, 5, 3];
+let sum = 0;
 
-    const {email, password} = req.body;
-
-    const user  = await User.findOne({
-        email
-    }).select("+password");
-
-    const isPasswordMatched = user.comparePassoword(password);
-
-    const token = user.getJWTToken();
-
-    const options = {
-        expires : new Date(
-            Date.now()+2*24*60*60*1000
-) , 
-httpOnly : true ,
-    } ;
-
-    res.status(200).cookie('token' , token , options)
-
+for (let i = 0; i < 5; i++) {
+    let qwt = qno_arr[i];
+    console.log('qwt = '+qwt)
+    let selectedOption = parseInt(req.body[`q${i + 1}`], 10); // Convert to number
+    console.log('so'+selectedOption)
+    sum += qwt * checkboxwt[selectedOption - 1];
+}
+res.send(sum)
+res.redirect("/detail")
 })
+
 app.get('/register',function(req,res){
-    res.render("Register")
+    res.render("RegisterUser")
+});
+
+app.get('/login',function(req,res){
+    res.render("LoginUser")
 });
 app.post ('/test' , async (req , res , next)=>{
     const qno_arr = [2, 3, 5, 7, 9];
@@ -107,6 +90,24 @@ app.get('/doctor',function(req,res){
 
 app.get('/testinput',function(req,res){
     res.render("TestInput")
+})
+
+
+
+app.post('/testinput',function(req,res){
+    if(req.body!=null){
+        res.redirect("/detailpage");
+    }
+    else {
+        res.redirect("/testinput")
+    }
+})
+//data input 
+app.get('/detailpage',function(req,res){
+    res.render("Details")
+})
+app.get('/community',function(req,res){
+    res.render("Community")
 })
 
 app.listen(5000,function(){
