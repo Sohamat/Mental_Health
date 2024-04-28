@@ -1,11 +1,10 @@
 const express= require('express');
 const app= express();
+const cookieParser = require("cookie-parser")
 const path= require('path');
-const patientModel=require('./models/Patient_Schema.module.js')
-app.use(express.json());
-app.use(express.urlencoded({extended:true}));
-app.use(express.static(path.join(__dirname, 'public')))
+ 
 
+const fs= require('fs');
 app.set('view engine','ejs');
 
 
@@ -60,7 +59,27 @@ app.get('/register',function(req,res){
 app.get('/login',function(req,res){
     res.render("LoginUser")
 });
+app.post ('/test' , async (req , res , next)=>{
+    const qno_arr = [2, 3, 5, 7, 9];
+const checkboxwt = [10, 8, 5, 3];
+let sum = 0;
 
+
+    const {token} = req.cookies
+
+    const decodedData = jwt.verify(token , "wlrng;ksfb kfvj sfugbRWUOBVOSV");
+
+
+    const user = await User.findById(decodedData.id)
+for (let i = 0; i < 5; i++) {
+    let qwt = qno_arr[i];
+    let selectedOption = parseInt(req.body[`q${i + 1}`], 10); // Convert to number
+    sum += qwt * checkboxwt[selectedOption - 1];
+}
+
+    user.risk = sum ;
+
+})
 app.get('/stressmanager',function(req,res){
     res.render("stressManagement")
 })
@@ -95,6 +114,22 @@ app.get('/profileDetails',function(req,res){
     res.render("ProfileDetails")
 })
 
-app.listen(3000,function(){
-    console.log('Server is running on port 3000');
+app.get('/profileDetails',function(req,res){
+    res.render("ProfileDetails")
+})
+
+app.listen(5000,function(){
+    console.log('Server is running on port 5000');
 });
+
+
+
+
+
+
+
+
+
+
+
+
